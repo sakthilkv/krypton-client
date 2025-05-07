@@ -1,0 +1,64 @@
+"Generate 1 coding problems in JSON format that teach OS, DBMS, or Computer Networks concepts through non-technical analogies. Each problem must:*
+
+Explain a CS concept using real-world scenarios (e.g., "Cache eviction like a librarian replacing old books").
+
+Include a coding task (function/algorithm) that directly applies the concept.
+
+Provide exactly 3 test cases (1 normal, 1 edge case, 1 stress case).
+
+JSON Template for Each Problem:
+
+json
+{
+  "id": <  integer> count from 3,
+  "title": "<short_title>",
+  "description": "<analogy_based_explanation>",
+  "functionSignature": "<function_name(inputs)>",
+  "constraints": ["<constraint1>", "<constraint2>"],
+  "testcase": [
+    {"input": <input1>, "expectedOutput": <output1>},
+    {"input": <input2>, "expectedOutput": <output2>},
+    {"input": <input3>, "expectedOutput": <output3>}
+  ],
+  "type": "Operating System/Database Management System/Computer Networks"
+}
+Key Requirements:
+
+Test Cases:
+
+1st: Typical input (e.g., {"input": "SELECT * FROM users", "expectedOutput": 5}).
+
+2nd: Edge case (e.g., {"input": "", "expectedOutput": "ERROR"}).
+
+3rd: Stress case (e.g., {"input": 10000 requests, "expectedOutput": "No deadlock"}).
+
+Avoid jargon (e.g., "Threads as restaurant waiters" instead of "Multithreading").
+
+Example:
+
+json
+{
+  "id": 1,
+  "title": "Library Cache System",
+  "description": "A librarian replaces least-recently-read books to free shelf space (like CPU cache eviction). Write a function that picks which book to remove.",
+  "functionSignature": "function evictBook(bookshelf, newBook)",
+  "constraints": ["Shelf fits only 5 books", "Evict the oldest unused book"],
+  "testcase": [
+    {"input": [["A", "B", "C"], "D"], "expectedOutput": "A"},
+    {"input": [[], "A"], "expectedOutput": null},
+    {"input": [["A", "B", "C", "D", "E"], "F"], "expectedOutput": "A"}
+  ],
+  "type": "OS"
+}
+Generate problems with this exact structure."
+
+Why This Works:
+3-test-case limit ensures quality over quantity (Gemini follows this strictly).
+
+Analogies make abstract concepts (e.g., deadlock, indexing) tangible.
+
+Structured JSON is ready-to-use for apps/teaching.
+
+input and output should be in string
+
+don't inlcude restaurant

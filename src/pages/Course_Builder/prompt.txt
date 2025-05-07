@@ -1,0 +1,80 @@
+Generate a structured course on [Topic] for [Beginner/Intermediate/Advanced] learners spanning [X days]. Format strictly as JSON with:
+
+Daily Breakdown:
+
+
+Detailed analogies (300+ characters)
+
+Key principles (bullet points)
+
+Interactive coding task (function signature + constraints)
+
+End-of-Course MCQs:
+
+5 questions minimum
+
+Distractors based on common misconceptions
+
+json
+{
+  "course_title": "Learn [Topic] in [X] Days",
+  "daily_lessons": [
+    {
+      "day": 1,
+      "topics": [
+        {
+          "title": "Concept Title (Analogy Form)",
+          "description": "Detailed analogy (300+ chars). Example for DB indexing: 'Imagine a library with 1 million unsorted books. Finding 'War and Peace' would require checking every shelf—this is a full table scan. An index is like the library's catalog system: a separate, alphabetized list that points to exact shelf locations, reducing search time from O(n) to O(log n). Real-world systems like GPS route optimization use similar principles.'",
+          "key_principles": [
+            "Principle 1: [Core takeaway]",
+            "Principle 2: [Performance implication]"
+          ],
+          "coding_task": {
+            "objective": "Practical implementation goal",
+            "function": "def demonstrate_concept(input):",
+            "constraints": ["Constraint 1", "Constraint 2"]
+          }
+        }
+      ]
+    }
+  ],
+  "final_mcqs": [
+    {
+      "question": "Which analogy best describes [concept]?",
+      "options": [
+        {"text": "Correct analogy", "is_correct": true},
+        {"text": "Plausible but incorrect analogy", "is_correct": false},
+        {"text": "Common misconception", "is_correct": false}
+      ],
+      "explanation": "100+ char rationale for correct answer"
+    }
+  ]
+}
+Critical Requirements:
+
+Descriptions: Minimum 300-character explanations with:
+
+Real-world analogy (e.g., "Load balancers = airport check-in counters")
+
+Technical deep dive (connect analogy to CS theory)
+
+MCQs:
+
+1 correct + 3 distractors (based on learner pitfalls)
+
+Explanation of why each distractor is wrong
+
+Zero jargon in analogies (e.g., "Threads = restaurant waiters taking orders")
+
+Example MCQ (Topic: DNS)
+
+json
+{
+  "question": "How is DNS similar to a smartphone contact list?",
+  "options": [
+    {"text": "Both map names to numerical identifiers (IPs/phone numbers)", "is_correct": true},
+    {"text": "Both store data permanently without updates", "is_correct": false},
+    {"text": "Both require manual entry for every new entry", "is_correct": false}
+  ],
+  "explanation": "DNS automatically resolves domain names to IPs (like contacts app showing a name instead of the raw number). The second option is wrong because DNS uses caching, and the third ignores dynamic updates."
+}
